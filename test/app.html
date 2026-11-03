@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>InkPage app-shell fixture</title>
+<script>
+  if (!location.search.includes('ext')) document.write('<script src="harness.js"><\/script><script src="../src/shared/settings.js"><\/script><script src="../src/content/content.js"><\/script>');
+</script>
+<style>
+  html, body { height: 100%; margin: 0; overflow: hidden; font: 16px/1.6 Georgia, serif; }
+  .shell { display: grid; grid-template-rows: 64px 1fr; height: 100%; }
+  header { background: #234; color: #fff; padding: 20px; transition: background .4s, color .4s; }
+  main { overflow-y: auto; padding: 0 24px; }
+</style>
+</head>
+<body>
+<div class="shell"><header>App shell — the document never scrolls, &lt;main&gt; does</header><main id="main"></main></div>
+<script>
+  const m = document.getElementById('main');
+  for (let i = 1; i <= 30; i++) { const p = document.createElement('p'); p.textContent = `§${i} ` + 'Inner scroll containers are how most web apps lay out their reading pane, so page turns must find them. '.repeat(4); m.appendChild(p); }
+</script>
+</body>
+</html>

@@ -1,0 +1,417 @@
+{
+  "extName": {
+    "message": "墨页 InkPage · 墨水屏阅读模式"
+  },
+  "extShort": {
+    "message": "墨页 InkPage"
+  },
+  "extDesc": {
+    "message": "把网页变成墨水屏友好的黑白页面：按屏翻页、永不切半行，还有像电子书一样排版翻页的书页模式。"
+  },
+  "cmdToggle": {
+    "message": "在当前网站开关墨水屏模式"
+  },
+  "cmdRefresh": {
+    "message": "清屏刷新（消除墨水屏残影）"
+  },
+  "on": {
+    "message": "开"
+  },
+  "off": {
+    "message": "关"
+  },
+  "auto": {
+    "message": "自动"
+  },
+  "unavailable": {
+    "message": "这是浏览器自带页面，扩展无法修改。"
+  },
+  "refreshScreen": {
+    "message": "清屏刷新"
+  },
+  "hideElements": {
+    "message": "隐藏元素…"
+  },
+  "secLook": {
+    "message": "显示"
+  },
+  "theme": {
+    "message": "配色"
+  },
+  "themePaper": {
+    "message": "白纸"
+  },
+  "themeNight": {
+    "message": "夜读"
+  },
+  "textWeight": {
+    "message": "文字粗细"
+  },
+  "weight0": {
+    "message": "原样"
+  },
+  "weight1": {
+    "message": "加粗"
+  },
+  "weight2": {
+    "message": "更粗"
+  },
+  "font": {
+    "message": "字体"
+  },
+  "fontOriginal": {
+    "message": "原字体"
+  },
+  "fontSerif": {
+    "message": "衬线"
+  },
+  "fontSans": {
+    "message": "无衬线"
+  },
+  "images": {
+    "message": "图片"
+  },
+  "imgNormal": {
+    "message": "原样"
+  },
+  "imgContrast": {
+    "message": "高对比"
+  },
+  "imgHide": {
+    "message": "隐藏"
+  },
+  "grayscale": {
+    "message": "全部去色"
+  },
+  "secPaging": {
+    "message": "翻页"
+  },
+  "paging": {
+    "message": "按屏翻页"
+  },
+  "pagingHint": {
+    "message": "空格 · PageDown · 方向键"
+  },
+  "cleanEdges": {
+    "message": "不切半行"
+  },
+  "cleanEdgesHint": {
+    "message": "被截断的那一行留到下一页开头"
+  },
+  "pageIndicator": {
+    "message": "显示页码"
+  },
+  "arrowKeys": {
+    "message": "方向键也翻页"
+  },
+  "wheelPaging": {
+    "message": "滚轮一拨翻一页"
+  },
+  "tapZones": {
+    "message": "点屏幕边缘翻页"
+  },
+  "tapZonesHint": {
+    "message": "左 30% 上一页 · 右 30% 下一页"
+  },
+  "autoRefresh": {
+    "message": "自动清屏间隔"
+  },
+  "autoRefreshHint": {
+    "message": "黑白闪一次，按翻页数计"
+  },
+  "secCalm": {
+    "message": "安静"
+  },
+  "noMotion": {
+    "message": "停止动画"
+  },
+  "noMotionHint": {
+    "message": "过渡、转圈、静音自动播放视频"
+  },
+  "freezeGif": {
+    "message": "冻结 GIF（点击播放）"
+  },
+  "unpin": {
+    "message": "取消悬浮栏"
+  },
+  "unpinHint": {
+    "message": "顶栏底栏不再占用每一页"
+  },
+  "restore": {
+    "message": "全部恢复"
+  },
+  "everywhere": {
+    "message": "所有网站默认开启"
+  },
+  "makeDefault": {
+    "message": "设为所有网站默认"
+  },
+  "resetSite": {
+    "message": "重置此网站"
+  },
+  "savedHint": {
+    "message": "设置按网站分别记住。● 表示仅对本站的修改。"
+  },
+  "savedDefault": {
+    "message": "已设为默认"
+  },
+  "resetDone": {
+    "message": "此网站已恢复默认"
+  },
+  "gifPaused": {
+    "message": "GIF 已暂停 — 点击播放"
+  },
+  "pickTip": {
+    "message": "点击要隐藏的元素（本站记住）· Esc 结束"
+  },
+  "optTitle": {
+    "message": "墨页 — 已记住的网站"
+  },
+  "optLead": {
+    "message": "每个网站单独保存设置。删除某个网站后它将跟随默认设置。"
+  },
+  "optSite": {
+    "message": "网站"
+  },
+  "optState": {
+    "message": "状态"
+  },
+  "optChanges": {
+    "message": "本站设置"
+  },
+  "optEmpty": {
+    "message": "还没有记录。在任意网页点击工具栏按钮即可开始。"
+  },
+  "optExport": {
+    "message": "导出设置"
+  },
+  "optImport": {
+    "message": "导入设置"
+  },
+  "optResetAll": {
+    "message": "全部重置"
+  },
+  "optKeys": {
+    "message": "快捷键"
+  },
+  "optNext": {
+    "message": "下一页"
+  },
+  "optPrev": {
+    "message": "上一页"
+  },
+  "optHidden": {
+    "message": "隐藏元素"
+  },
+  "optRemove": {
+    "message": "删除"
+  },
+  "optBadFile": {
+    "message": "这不是墨页导出的设置文件。"
+  },
+  "optConfirmReset": {
+    "message": "确定清除所有网站记录并恢复默认设置？"
+  },
+  "hiddenCount": {
+    "message": "本站已隐藏 $COUNT$ 个元素",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "cmdBook": {
+    "message": "在当前网站切换书页模式"
+  },
+  "modePage": {
+    "message": "原网页"
+  },
+  "modeBook": {
+    "message": "书页"
+  },
+  "modePageHint": {
+    "message": "保留网站原本的版式和交互。"
+  },
+  "modeBookHint": {
+    "message": "只留正文，像电子书一样重新排版、翻页。"
+  },
+  "secBook": {
+    "message": "书页排版"
+  },
+  "bookSize": {
+    "message": "字号"
+  },
+  "bookLeading": {
+    "message": "行距"
+  },
+  "leadTight": {
+    "message": "紧凑"
+  },
+  "leadNormal": {
+    "message": "适中"
+  },
+  "leadLoose": {
+    "message": "宽松"
+  },
+  "bookMargin": {
+    "message": "页边距"
+  },
+  "marginNarrow": {
+    "message": "窄"
+  },
+  "marginNormal": {
+    "message": "中"
+  },
+  "marginWide": {
+    "message": "宽"
+  },
+  "bookAlign": {
+    "message": "对齐"
+  },
+  "alignJustify": {
+    "message": "两端对齐"
+  },
+  "alignLeft": {
+    "message": "左对齐"
+  },
+  "bookHint": {
+    "message": "点左侧上一页，其余位置下一页 · 点顶部打开菜单 · 点页脚切换显示 · Esc 返回原网页"
+  },
+  "bookNoArticle": {
+    "message": "这一页没找到正文，已用原网页模式显示。"
+  },
+  "bookExitHint": {
+    "message": "已临时返回原网页，按 Alt+Shift+B 回到书页。"
+  },
+  "bookDone": {
+    "message": "已读完"
+  },
+  "bookEnd": {
+    "message": "— 全文完 —"
+  },
+  "bookMedia": {
+    "message": "▶ 嵌入的媒体（打开原链接）"
+  },
+  "bookSettings": {
+    "message": "阅读设置"
+  },
+  "bookReadTime": {
+    "message": "约 $N$ 分钟",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "bookLeft": {
+    "message": "本文剩余约 $N$ 分钟",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "bookBack": {
+    "message": "原网页"
+  },
+  "tabFont": {
+    "message": "字体"
+  },
+  "tabLayout": {
+    "message": "版式"
+  },
+  "tabTheme": {
+    "message": "主题"
+  },
+  "fontSong": {
+    "message": "宋体"
+  },
+  "fontKai": {
+    "message": "楷体"
+  },
+  "fontHei": {
+    "message": "黑体"
+  },
+  "latinFont": {
+    "message": "西文字体"
+  },
+  "cjkFont": {
+    "message": "中文字体"
+  },
+  "bookParagraph": {
+    "message": "段落"
+  },
+  "paraIndent": {
+    "message": "首行缩进"
+  },
+  "paraSpace": {
+    "message": "段间空行"
+  },
+  "bookClock": {
+    "message": "显示时间"
+  },
+  "bookFooter": {
+    "message": "页脚"
+  },
+  "footPage": {
+    "message": "页码"
+  },
+  "footTime": {
+    "message": "剩余时间"
+  },
+  "footNone": {
+    "message": "不显示"
+  },
+  "pageRefresh": {
+    "message": "翻页刷新"
+  },
+  "refreshEvery": {
+    "message": "每页"
+  },
+  "bookPageOf": {
+    "message": "第 $CUR$ 页，共 $ALL$ 页",
+    "placeholders": {
+      "cur": {
+        "content": "$1"
+      },
+      "all": {
+        "content": "$2"
+      }
+    }
+  },
+  "themeGray": {
+    "message": "灰白纸"
+  },
+  "themeSepia": {
+    "message": "暖纸"
+  },
+  "themeGreen": {
+    "message": "护眼绿"
+  },
+  "paperGrain": {
+    "message": "纸纹"
+  },
+  "paperShade": {
+    "message": "边缘明暗"
+  },
+  "lvlLight": {
+    "message": "轻"
+  },
+  "lvlMedium": {
+    "message": "中"
+  },
+  "lvlStrong": {
+    "message": "重"
+  },
+  "optOwnCount": {
+    "message": "$N$ 项单独设置",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "pageNotReached": {
+    "message": "页面暂时没有响应。设置照样生效；清屏刷新和隐藏元素需要刷新页面后才能用。"
+  }
+}

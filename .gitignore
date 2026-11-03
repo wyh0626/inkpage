@@ -1,0 +1,8 @@
+node_modules/
+dist/
+safari-app/
+.DS_Store
+# The HyperFrames UI film was shelved; its files stay local.
+video/
+# Written by every run of test/e2e.mjs.
+test/e2e-*.png

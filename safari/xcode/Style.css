@@ -1,0 +1,132 @@
+* {
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
+    cursor: default;
+    box-sizing: border-box;
+}
+
+/* The extension's paper and night themes. */
+:root {
+    color-scheme: light dark;
+    --paper: #fbf9f4;
+    --ink: #1d1d1b;
+    --muted: #5d5b55;
+    --rule: #dcd8ce;
+    --button: #1d1d1b;
+    --button-ink: #fbf9f4;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --paper: #121211;
+        --ink: #d6d4ce;
+        --muted: #9a978f;
+        --rule: #34332f;
+        --button: #d6d4ce;
+        --button-ink: #121211;
+    }
+}
+
+html {
+    height: 100%;
+    background: var(--paper);
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right))
+             max(24px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--paper);
+    color: var(--ink);
+    font: -apple-system-body;
+    font-family: -apple-system, "PingFang SC", sans-serif;
+    line-height: 1.55;
+}
+
+main {
+    width: 100%;
+    max-width: 30em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+}
+
+img {
+    border-radius: 22%;
+}
+
+h1 {
+    margin: 4px 0 0;
+    font-family: ui-serif, "Songti SC", Georgia, serif;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: .02em;
+}
+
+.lead {
+    margin: 0;
+    color: var(--muted);
+}
+
+.status {
+    margin: 0;
+    font-weight: 600;
+}
+
+ol {
+    width: 100%;
+    margin: 4px 0 0;
+    padding: 4px 0 0;
+    border-top: 1px solid var(--rule);
+    list-style: none;
+    counter-reset: step;
+    text-align: start;
+}
+
+li {
+    counter-increment: step;
+    position: relative;
+    padding: 12px 0 12px 2.2em;
+    border-bottom: 1px solid var(--rule);
+}
+
+li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 1.5em;
+    height: 1.5em;
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+    font-size: .85em;
+    line-height: 1.45em;
+    text-align: center;
+}
+
+button {
+    margin-top: 8px;
+    padding: 12px 22px;
+    border: 0;
+    border-radius: 12px;
+    background: var(--button);
+    color: var(--button-ink);
+    font: inherit;
+    font-weight: 600;
+}
+
+body.platform-ios .platform-mac,
+body.platform-mac .platform-ios,
+body:not(.platform-ios, .platform-mac) :is(.platform-ios, .platform-mac),
+body:not(.state-on) .state-on,
+body:not(.state-off) .state-off,
+body:not(.can-open) .open-settings {
+    display: none;
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>InkPage fixture</title>
+<script>
+  // ?ext = the real extension is loaded (end-to-end test); otherwise run the content script with the API harness.
+  if (!location.search.includes('ext')) document.write('<script src="harness.js"><\/script><script src="../src/shared/settings.js"><\/script><script src="../src/content/content.js"><\/script>');
+</script>
+<style>
+  body { margin: 0; font: 300 17px/1.7 "Helvetica Neue", Arial, sans-serif; background: #f3efe6; color: #333; }
+  .top { position: fixed; top: 0; left: 0; right: 0; height: 56px; background: rgba(255,255,255,.95); display: flex; align-items: center; gap: 20px; padding: 0 20px; z-index: 50; border-bottom: 1px solid #ddd; }
+  .burger { display: inline-flex; flex-direction: column; gap: 4px; }
+  .burger span { display: block; width: 22px; height: 3px; background: #c33; }
+  .menu-wrap { position: relative; }
+  .menu { position: absolute; top: 36px; left: 0; z-index: 60; background: #fff; border-radius: 6px; padding: 8px 0; width: 180px; box-shadow: 0 6px 20px rgba(0,0,0,.2); display: none; }
+  .menu.open { display: block; }
+  .menu a { display: block; padding: 6px 14px; color: #06c; }
+  .cta { background: linear-gradient(90deg,#f06,#48f); color: #fff; border: 0; padding: 8px 16px; border-radius: 20px; }
+  .hero { margin-top: 56px; padding: 60px 40px; background: #123; color: #eef; }
+  .hero h1 { font-size: 44px; background: linear-gradient(90deg,#f90,#f0f); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin: 0; }
+  .wrap { display: flex; gap: 32px; max-width: 1100px; margin: 0 auto; padding: 24px; }
+  article { flex: 1; min-width: 0; }
+  aside { width: 220px; position: sticky; top: 72px; align-self: flex-start; background: #fff; padding: 12px; border-radius: 8px; }
+  .fade { opacity: 0; animation: fadein 3s ease 1s forwards; }
+  @keyframes fadein { to { opacity: 1; } }
+  .spinner { width: 24px; height: 24px; border: 4px solid #ccc; border-top-color: #e33; border-radius: 50%; animation: spin 1s linear infinite; display: inline-block; vertical-align: middle; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .tag { background: #e33; color: #fff; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+  .cookie { position: fixed; bottom: 0; left: 0; right: 0; background: #222; color: #fff; padding: 14px 20px; z-index: 40; }
+  .modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 100; }
+  .modal.open { display: flex; }
+  .backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.55); }
+  .panel { position: relative; background: #fff; padding: 24px; border-radius: 10px; width: 360px; }
+  .toasts { position: fixed; inset: 0; pointer-events: none; z-index: 30; }
+  code { background: #eee; padding: 0 4px; }
+  .slab-host { position: relative; padding: 40px; color: #fff; margin: 24px 0; }
+  .slab { position: absolute; inset: 0; background: #0a2a4a; z-index: -1; }
+</style>
+<script src="selftest.js?v=7"></script>
+</head>
+<body>
+  <div class="top" id="top">
+    <span class="burger" aria-label="menu"><span></span><span></span><span></span></span>
+    <strong>Fixture Times</strong>
+    <div class="menu-wrap">
+      <button type="button" id="menuBtn">Sections ▾</button>
+      <div class="menu" id="menu"><a href="#a">World</a><a href="#b">Science</a><a href="#c">Culture</a></div>
+    </div>
+    <button class="cta" id="openModal">Subscribe</button>
+    <span class="spinner" id="spinner"></span>
+  </div>
+  <div class="toasts"></div>
+
+  <section class="hero"><h1 id="gradText">The long read, rendered calm</h1><p>Light text on a dark slab should become black on paper.</p></section>
+
+  <div class="wrap">
+    <article id="article"></article>
+    <aside id="aside"><strong>On this page</strong><p class="fade" id="fade">This box fades in (base opacity 0).</p><p><span class="tag" id="tag">NEW</span> sticky sidebar</p><img id="gif" src="spin.gif" width="160" height="90" alt="animated gif"><fancy-card id="fc"></fancy-card></aside>
+  </div>
+
+  <div class="cookie" id="cookie">We use cookies. <button>Accept</button></div>
+  <div class="modal" id="modal"><div class="backdrop"></div><div class="panel" id="panel"><h3>Subscribe</h3><p>Panel must stay opaque over the page.</p><button id="closeModal">Close</button></div></div>
+
+<script>
+  const lorem = 'Reading on a paper-like screen rewards stillness. Every redraw costs a flash, every animation leaves a ghost, and every sticky bar steals the same strip of every page. ';
+  const art = document.getElementById('article');
+  for (let i = 1; i <= 40; i++) {
+    const p = document.createElement('p');
+    p.innerHTML = `<b>¶${i}.</b> ` + lorem.repeat(2 + (i % 3)) + `See <a href="#p${i}">note ${i}</a> and <code>code()</code>.`;
+    art.appendChild(p);
+    if (i === 8) { const s = document.createElement('div'); s.className = 'slab-host'; s.id = 'slabHost'; s.innerHTML = '<div class="slab" id="slab"></div>Text over an empty, absolutely-positioned dark slab.'; art.appendChild(s); }
+  }
+  customElements.define('fancy-card', class extends HTMLElement {
+    constructor() { super(); const r = this.attachShadow({ mode: 'open' }); r.innerHTML = '<style>.c{background:#2a6;color:#fff;padding:8px;margin-top:8px;border-radius:6px}</style><div class="c" id="inner">Shadow DOM card</div>'; }
+  });
+  document.getElementById('menuBtn').onclick = () => document.getElementById('menu').classList.toggle('open');
+  document.getElementById('openModal').onclick = () => document.getElementById('modal').classList.add('open');
+  document.getElementById('closeModal').onclick = () => document.getElementById('modal').classList.remove('open');
+  // A JS (WAAPI) animation that never ends.
+  document.getElementById('tag').animate([{ transform: 'scale(1)' }, { transform: 'scale(1.3)' }], { duration: 600, iterations: Infinity, direction: 'alternate' });
+</script>
+</body>
+</html>

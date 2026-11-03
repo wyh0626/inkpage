@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="style-src 'self'">
+<title>CSP probe</title>
+<link rel="stylesheet" href="csp.css">
+<script src="csp-probe.js"></script>
+</head>
+<body><div class="box" id="a">A: injected &lt;style&gt;</div><div class="box" id="b">B: constructed stylesheet</div><div class="box" id="c">C: constructed sheet in a shadow root</div><div id="host"></div></body>
+</html>

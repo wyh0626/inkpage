@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InkPage</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="head">
+    <img class="logo" src="../icons/icon-48.png" alt="" width="28" height="28">
+    <div class="who">
+      <div class="name" data-i18n="extShort">InkPage</div>
+      <div class="site" id="site">—</div>
+    </div>
+    <label class="power" title="Alt+Shift+E">
+      <input type="checkbox" id="enabled">
+      <span class="power-ui"><span class="power-on" data-i18n="on">On</span><span class="power-off" data-i18n="off">Off</span></span>
+    </label>
+  </header>
+
+  <p class="notice" id="unavailable" hidden data-i18n="unavailable">This page belongs to the browser; extensions can't change it.</p>
+
+  <main id="controls">
+    <div class="actions">
+      <button type="button" id="flash" title="Alt+Shift+R"><span data-i18n="refreshScreen">Refresh screen</span></button>
+      <button type="button" id="pick" class="only-page"><span data-i18n="hideElements">Hide elements</span></button>
+    </div>
+
+    <div class="mode" title="Alt+Shift+B">
+      <div class="seg wide" data-key="mode">
+        <button type="button" data-v="page" data-i18n="modePage">Web page</button>
+        <button type="button" data-v="book" data-i18n="modeBook">Book</button>
+      </div>
+      <p class="mode-hint only-page" data-i18n="modePageHint">Keeps the site's own layout and links.</p>
+      <p class="mode-hint only-book" data-i18n="modeBookHint">Article only, re-typeset and paged like an e-reader.</p>
+    </div>
+
+    <section class="only-book">
+      <h2 data-i18n="secBook">Typesetting</h2>
+      <div class="row"><span data-i18n="bookSize">Text size</span>
+        <div class="step" data-key="bookSize">
+          <button type="button" data-d="-2">A−</button><span class="val"></span><button type="button" data-d="2">A+</button>
+        </div>
+      </div>
+      <div class="row stack"><span data-i18n="latinFont">Latin font</span>
+        <div class="seg fontpick" data-key="bookFont">
+          <button type="button" data-v="literata" style="font-family:InkLiterata,Georgia,serif">Literata</button>
+          <button type="button" data-v="sourceserif" style="font-family:InkSourceSerif,Georgia,serif">Source Serif</button>
+          <button type="button" data-v="charis" style="font-family:InkCharis,Charter,Georgia,serif">Charis</button>
+          <button type="button" data-v="palatino" style="font-family:Palatino,'Palatino Linotype',serif">Palatino</button>
+          <button type="button" data-v="sans" style="font-family:Helvetica,Arial,sans-serif">Helvetica</button>
+        </div>
+      </div>
+      <div class="row"><span data-i18n="cjkFont">Chinese font</span>
+        <div class="seg" data-key="bookCjkFont">
+          <button type="button" data-v="song" data-i18n="fontSong" style="font-family:'Songti SC',STSong,SimSun,serif">Song</button>
+          <button type="button" data-v="kai" data-i18n="fontKai" style="font-family:'Kaiti SC',STKaiti,KaiTi,serif">Kai</button>
+          <button type="button" data-v="hei" data-i18n="fontHei" style="font-family:'PingFang SC','Microsoft YaHei',sans-serif">Hei</button>
+        </div>
+      </div>
+      <div class="row"><span data-i18n="bookLeading">Line spacing</span>
+        <div class="seg" data-key="bookLeading" data-num>
+          <button type="button" data-v="1.5" data-i18n="leadTight">Tight</button>
+          <button type="button" data-v="1.7" data-i18n="leadNormal">Normal</button>
+          <button type="button" data-v="1.9" data-i18n="leadLoose">Loose</button>
+        </div>
+      </div>
+      <div class="row"><span data-i18n="bookMargin">Margins</span>
+        <div class="seg" data-key="bookMargin">
+          <button type="button" data-v="narrow" data-i18n="marginNarrow">Narrow</button>
+          <button type="button" data-v="normal" data-i18n="marginNormal">Normal</button>
+          <button type="button" data-v="wide" data-i18n="marginWide">Wide</button>
+        </div>
+      </div>
+      <div class="row"><span data-i18n="bookAlign">Alignment</span>
+        <div class="seg" data-key="bookAlign">
+          <button type="button" data-v="justify" data-i18n="alignJustify">Justified</button>
+          <button type="button" data-v="left" data-i18n="alignLeft">Left</button>
+        </div>
+      </div>
+      <div class="row"><span data-i18n="bookParagraph">Paragraphs</span>
+        <div class="seg" data-key="bookParagraph">
+          <button type="button" data-v="indent" data-i18n="paraIndent">Indent</button>
+          <button type="button" data-v="space" data-i18n="paraSpace">Spaced</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="secLook">Look</h2>
+      <div class="row stack"><span data-i18n="theme">Theme</span>
+        <div class="seg swatches" data-key="theme">
+          <button type="button" data-v="paper"><b>Aa</b><span data-i18n="themePaper">White</span></button>
+          <button type="button" data-v="gray"><b>Aa</b><span data-i18n="themeGray">Gray</span></button>
+          <button type="button" data-v="sepia"><b>Aa</b><span data-i18n="themeSepia">Warm</span></button>
+          <button type="button" data-v="green"><b>Aa</b><span data-i18n="themeGreen">Green</span></button>
+          <button type="button" data-v="night"><b>Aa</b><span data-i18n="themeNight">Night</span></button>
+        </div>
+      </div>
+      <div class="row only-book"><span data-i18n="paperGrain">Paper grain</span>
+        <div class="seg" data-key="paperGrain" data-num>
+          <button type="button" data-v="0" data-i18n="off">Off</button>
+          <button type="button" data-v="1" data-i18n="lvlLight">Light</button>
+          <button type="button" data-v="2" data-i18n="lvlMedium">Medium</button>
+          <button type="button" data-v="3.5" data-i18n="lvlStrong">Strong</button>
+        </div>
+      </div>
+      <div class="row only-book"><span data-i18n="paperShade">Edge shading</span>
+        <div class="seg" data-key="paperShade" data-num>
+          <button type="button" data-v="0" data-i18n="off">Off</button>
+          <button type="button" data-v="3" data-i18n="lvlLight">Light</button>
+          <button type="button" data-v="5" data-i18n="lvlMedium">Medium</button>
+          <button type="button" data-v="8" data-i18n="lvlStrong">Strong</button>
+        </div>
+      </div>
+      <div class="row"><span data-i18n="textWeight">Text weight</span>
+        <div class="seg" data-key="textWeight" data-num>
+          <button type="button" data-v="0" data-i18n="weight0">Original</button>
+          <button type="button" data-v="1" data-i18n="weight1">Bolder</button>
+          <button type="button" data-v="2" data-i18n="weight2">Heavy</button>
+        </div>
+      </div>
+      <div class="row only-page"><span data-i18n="font">Font</span>
+        <div class="seg" data-key="font">
+          <button type="button" data-v="original" data-i18n="fontOriginal">Site</button>
+          <button type="button" data-v="serif" data-i18n="fontSerif">Serif</button>
+          <button type="button" data-v="sans" data-i18n="fontSans">Sans</button>
+        </div>
+      </div>
+      <div class="row"><span data-i18n="images">Images</span>
+        <div class="seg" data-key="images">
+          <button type="button" data-v="normal" data-i18n="imgNormal">As is</button>
+          <button type="button" data-v="contrast" data-i18n="imgContrast">Crisp</button>
+          <button type="button" data-v="hide" data-i18n="imgHide">Hide</button>
+        </div>
+      </div>
+      <label class="row"><span data-i18n="grayscale">Grayscale everything</span><input type="checkbox" class="sw" data-key="grayscale"></label>
+    </section>
+
+    <section>
+      <h2 data-i18n="secPaging">Page turns</h2>
+      <label class="row only-page"><span><span data-i18n="paging">Turn by screen</span><small data-i18n="pagingHint">Space · PageDown · arrows</small></span><input type="checkbox" class="sw" data-key="paging"></label>
+      <label class="row dep only-page"><span><span data-i18n="cleanEdges">No half-cut lines</span><small data-i18n="cleanEdgesHint">The cut line opens the next page</small></span><input type="checkbox" class="sw" data-key="cleanEdges"></label>
+      <label class="row dep"><span data-i18n="pageIndicator">Page number</span><input type="checkbox" class="sw" data-key="pageIndicator"></label>
+      <label class="row dep only-page"><span data-i18n="arrowKeys">Arrow keys turn pages</span><input type="checkbox" class="sw" data-key="arrowKeys"></label>
+      <label class="row dep only-page"><span data-i18n="wheelPaging">Wheel flick = one page</span><input type="checkbox" class="sw" data-key="wheelPaging"></label>
+      <div class="row dep only-page"><span><span data-i18n="tapZones">Tap screen edges</span><small data-i18n="tapZonesHint">Left 30% back · right 30% next</small></span>
+        <div class="seg" data-key="tapZones">
+          <button type="button" data-v="auto" data-i18n="auto">Auto</button>
+          <button type="button" data-v="on" data-i18n="on">On</button>
+          <button type="button" data-v="off" data-i18n="off">Off</button>
+        </div>
+      </div>
+      <div class="row dep"><span><span data-i18n="autoRefresh">Clear ghosting every</span><small data-i18n="autoRefreshHint">Full black-white flash, in pages</small></span>
+        <div class="seg" data-key="autoRefresh" data-num>
+          <button type="button" data-v="0" data-i18n="off">Off</button>
+          <button type="button" data-v="1">1</button>
+          <button type="button" data-v="5">5</button>
+          <button type="button" data-v="10">10</button>
+          <button type="button" data-v="20">20</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="only-page">
+      <h2 data-i18n="secCalm">Calm</h2>
+      <label class="row"><span><span data-i18n="noMotion">Stop animation</span><small data-i18n="noMotionHint">Transitions, spinners, muted autoplay video</small></span><input type="checkbox" class="sw" data-key="noMotion"></label>
+      <label class="row"><span data-i18n="freezeGif">Freeze GIFs (click to play)</span><input type="checkbox" class="sw" data-key="freezeGif"></label>
+      <label class="row"><span><span data-i18n="unpin">Release sticky bars</span><small data-i18n="unpinHint">Headers stop eating every page</small></span><input type="checkbox" class="sw" data-key="unpin"></label>
+    </section>
+
+    <div class="hidden-row" id="hiddenRow" hidden>
+      <span id="hiddenCount"></span>
+      <button type="button" class="link" id="restoreHidden" data-i18n="restore">Restore</button>
+    </div>
+
+    <footer>
+      <label class="every"><input type="checkbox" id="everywhere"> <span data-i18n="everywhere">Turn on for every site</span></label>
+      <div class="foot-actions">
+        <button type="button" class="link" id="makeDefault" data-i18n="makeDefault">Use these settings everywhere</button>
+        <button type="button" class="link" id="resetSite" data-i18n="resetSite">Reset this site</button>
+      </div>
+      <p class="saved" data-i18n="savedHint">Settings are remembered per site. ● marks a site-specific change.</p>
+    </footer>
+  </main>
+
+  <script src="../shared/settings.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

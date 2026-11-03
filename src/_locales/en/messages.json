@@ -1,0 +1,417 @@
+{
+  "extName": {
+    "message": "InkPage — E-ink Reading Mode"
+  },
+  "extShort": {
+    "message": "InkPage"
+  },
+  "extDesc": {
+    "message": "Calm black-on-white pages for e-ink and paper-like screens: page turns that never cut a line, plus an e-reader-style book view."
+  },
+  "cmdToggle": {
+    "message": "Toggle e-ink mode on this site"
+  },
+  "cmdRefresh": {
+    "message": "Refresh the screen (clear e-ink ghosting)"
+  },
+  "on": {
+    "message": "On"
+  },
+  "off": {
+    "message": "Off"
+  },
+  "auto": {
+    "message": "Auto"
+  },
+  "unavailable": {
+    "message": "This page belongs to the browser; extensions can't change it."
+  },
+  "refreshScreen": {
+    "message": "Refresh screen"
+  },
+  "hideElements": {
+    "message": "Hide elements…"
+  },
+  "secLook": {
+    "message": "Look"
+  },
+  "theme": {
+    "message": "Theme"
+  },
+  "themePaper": {
+    "message": "White"
+  },
+  "themeNight": {
+    "message": "Night"
+  },
+  "textWeight": {
+    "message": "Text weight"
+  },
+  "weight0": {
+    "message": "Original"
+  },
+  "weight1": {
+    "message": "Bolder"
+  },
+  "weight2": {
+    "message": "Heavy"
+  },
+  "font": {
+    "message": "Font"
+  },
+  "fontOriginal": {
+    "message": "Site"
+  },
+  "fontSerif": {
+    "message": "Serif"
+  },
+  "fontSans": {
+    "message": "Sans"
+  },
+  "images": {
+    "message": "Images"
+  },
+  "imgNormal": {
+    "message": "As is"
+  },
+  "imgContrast": {
+    "message": "Crisp"
+  },
+  "imgHide": {
+    "message": "Hide"
+  },
+  "grayscale": {
+    "message": "Grayscale everything"
+  },
+  "secPaging": {
+    "message": "Page turns"
+  },
+  "paging": {
+    "message": "Turn by screen"
+  },
+  "pagingHint": {
+    "message": "Space · PageDown · arrow keys"
+  },
+  "cleanEdges": {
+    "message": "No half-cut lines"
+  },
+  "cleanEdgesHint": {
+    "message": "A cut line opens the next page instead"
+  },
+  "pageIndicator": {
+    "message": "Page number"
+  },
+  "arrowKeys": {
+    "message": "Arrow keys turn pages"
+  },
+  "wheelPaging": {
+    "message": "One wheel flick = one page"
+  },
+  "tapZones": {
+    "message": "Tap screen edges"
+  },
+  "tapZonesHint": {
+    "message": "Left 30% back · right 30% next"
+  },
+  "autoRefresh": {
+    "message": "Clear ghosting every"
+  },
+  "autoRefreshHint": {
+    "message": "Black-white flash, counted in pages"
+  },
+  "secCalm": {
+    "message": "Calm"
+  },
+  "noMotion": {
+    "message": "Stop animation"
+  },
+  "noMotionHint": {
+    "message": "Transitions, spinners, muted autoplay video"
+  },
+  "freezeGif": {
+    "message": "Freeze GIFs (click to play)"
+  },
+  "unpin": {
+    "message": "Release sticky bars"
+  },
+  "unpinHint": {
+    "message": "Headers stop eating every page"
+  },
+  "restore": {
+    "message": "Restore"
+  },
+  "everywhere": {
+    "message": "Turn on for every site"
+  },
+  "makeDefault": {
+    "message": "Use these settings everywhere"
+  },
+  "resetSite": {
+    "message": "Reset this site"
+  },
+  "savedHint": {
+    "message": "Settings are remembered per site. ● marks a change made for this site only."
+  },
+  "savedDefault": {
+    "message": "Saved as the default"
+  },
+  "resetDone": {
+    "message": "This site follows the defaults again"
+  },
+  "gifPaused": {
+    "message": "GIF paused — click to play"
+  },
+  "pickTip": {
+    "message": "Click anything to hide it on this site · Esc to finish"
+  },
+  "optTitle": {
+    "message": "InkPage — remembered sites"
+  },
+  "optLead": {
+    "message": "Every site keeps its own switches. Remove a site to make it follow the defaults again."
+  },
+  "optSite": {
+    "message": "Site"
+  },
+  "optState": {
+    "message": "State"
+  },
+  "optChanges": {
+    "message": "Own settings"
+  },
+  "optEmpty": {
+    "message": "No sites yet. Click the toolbar button on any page to start."
+  },
+  "optExport": {
+    "message": "Export settings"
+  },
+  "optImport": {
+    "message": "Import settings"
+  },
+  "optResetAll": {
+    "message": "Reset everything"
+  },
+  "optKeys": {
+    "message": "Keyboard"
+  },
+  "optNext": {
+    "message": "next page"
+  },
+  "optPrev": {
+    "message": "previous page"
+  },
+  "optHidden": {
+    "message": "hidden elements"
+  },
+  "optRemove": {
+    "message": "Remove"
+  },
+  "optBadFile": {
+    "message": "That file is not an InkPage settings export."
+  },
+  "optConfirmReset": {
+    "message": "Forget every site and restore the default settings?"
+  },
+  "hiddenCount": {
+    "message": "$COUNT$ element(s) hidden on this site",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "cmdBook": {
+    "message": "Switch book view on this site"
+  },
+  "modePage": {
+    "message": "Web page"
+  },
+  "modeBook": {
+    "message": "Book"
+  },
+  "modePageHint": {
+    "message": "Keeps the site's own layout and links."
+  },
+  "modeBookHint": {
+    "message": "Article only, re-typeset and paged like an e-reader."
+  },
+  "secBook": {
+    "message": "Typesetting"
+  },
+  "bookSize": {
+    "message": "Text size"
+  },
+  "bookLeading": {
+    "message": "Line spacing"
+  },
+  "leadTight": {
+    "message": "Tight"
+  },
+  "leadNormal": {
+    "message": "Normal"
+  },
+  "leadLoose": {
+    "message": "Loose"
+  },
+  "bookMargin": {
+    "message": "Margins"
+  },
+  "marginNarrow": {
+    "message": "Narrow"
+  },
+  "marginNormal": {
+    "message": "Normal"
+  },
+  "marginWide": {
+    "message": "Wide"
+  },
+  "bookAlign": {
+    "message": "Alignment"
+  },
+  "alignJustify": {
+    "message": "Justified"
+  },
+  "alignLeft": {
+    "message": "Left"
+  },
+  "bookHint": {
+    "message": "Tap the left side for the previous page, anywhere else for the next · tap the top for menus · tap the footer to change it · Esc: back to the web page"
+  },
+  "bookNoArticle": {
+    "message": "No article found here — showing the web page instead."
+  },
+  "bookExitHint": {
+    "message": "Showing the original page. Alt+Shift+B goes back to book view."
+  },
+  "bookDone": {
+    "message": "Finished"
+  },
+  "bookEnd": {
+    "message": "— End —"
+  },
+  "bookMedia": {
+    "message": "▶ Embedded media (opens the original)"
+  },
+  "bookSettings": {
+    "message": "Reading settings"
+  },
+  "bookReadTime": {
+    "message": "$N$ min read",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "bookLeft": {
+    "message": "$N$ min left in article",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "bookBack": {
+    "message": "Web page"
+  },
+  "tabFont": {
+    "message": "Font"
+  },
+  "tabLayout": {
+    "message": "Layout"
+  },
+  "tabTheme": {
+    "message": "Theme"
+  },
+  "fontSong": {
+    "message": "Song"
+  },
+  "fontKai": {
+    "message": "Kai"
+  },
+  "fontHei": {
+    "message": "Hei"
+  },
+  "latinFont": {
+    "message": "Latin font"
+  },
+  "cjkFont": {
+    "message": "Chinese font"
+  },
+  "bookParagraph": {
+    "message": "Paragraphs"
+  },
+  "paraIndent": {
+    "message": "Indent"
+  },
+  "paraSpace": {
+    "message": "Spaced"
+  },
+  "bookClock": {
+    "message": "Clock"
+  },
+  "bookFooter": {
+    "message": "Footer"
+  },
+  "footPage": {
+    "message": "Page"
+  },
+  "footTime": {
+    "message": "Time left"
+  },
+  "footNone": {
+    "message": "Off"
+  },
+  "pageRefresh": {
+    "message": "Page refresh"
+  },
+  "refreshEvery": {
+    "message": "Every page"
+  },
+  "bookPageOf": {
+    "message": "Page $CUR$ of $ALL$",
+    "placeholders": {
+      "cur": {
+        "content": "$1"
+      },
+      "all": {
+        "content": "$2"
+      }
+    }
+  },
+  "themeGray": {
+    "message": "Gray"
+  },
+  "themeSepia": {
+    "message": "Warm"
+  },
+  "themeGreen": {
+    "message": "Green"
+  },
+  "paperGrain": {
+    "message": "Paper grain"
+  },
+  "paperShade": {
+    "message": "Edge shading"
+  },
+  "lvlLight": {
+    "message": "Light"
+  },
+  "lvlMedium": {
+    "message": "Medium"
+  },
+  "lvlStrong": {
+    "message": "Strong"
+  },
+  "optOwnCount": {
+    "message": "$N$ own setting(s)",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "pageNotReached": {
+    "message": "This page did not answer. Settings still apply; refresh the page to use Refresh screen and Hide elements."
+  }
+}
