@@ -11,8 +11,8 @@ Images · 图片: `store/en/*.png`, `store/zh/*.png` (1280×800), `promo-440x280
 
 **Name** (from the manifest): InkPage — E-ink Reading Mode
 
-**Short description** (manifest, 127 / 132 characters):
-Calm black-on-white pages for e-ink and paper-like screens: page turns that never cut a line, plus an e-reader-style book view.
+**Short description** (manifest, 111 characters; Safari allows 112, Chrome 132):
+Calm black-on-white pages for e-ink screens: page turns that never cut a line, and an e-reader-style book view.
 
 **Detailed description**
 

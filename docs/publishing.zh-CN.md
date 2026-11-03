@@ -79,7 +79,7 @@ iPhone 和 iPad 上的 Safari 扩展只能通过 App Store 安装，而 iOS 版�
    - iOS 17：设置 → Safari → 扩展 → 墨页。
 
    回到 Safari，点地址栏的“大小”按钮（aA），就能看到墨页。真机测试只需用数据线连接设备，选它运行即可。
-5. **TestFlight（可选）**：在 Xcode 里选 Product → Archive，然后 Distribute App → App Store Connect → Upload。上传后可以先在 TestFlight 里装到自己的 iPhone / iPad 上试用。
+5. **上传**：运行 `npm run ios:upload`，自动打包并上传到 App Store Connect，上传后也会出现在 TestFlight 里，可以先装到自己的 iPhone / iPad 上试用。同一版本再次上传要加大构建号：`INKPAGE_BUILD=2 npm run ios:upload`。（在 Xcode 里用 Product → Archive 会先按开发版签名，团队没有登记任何设备时会失败；这个脚本先不签名打包，导出时再签 App Store 发布证书。）
 6. **App Store Connect**：在 [App Store Connect](https://appstoreconnect.apple.com/) 新建 App，平台选 iOS，Bundle ID 选上一步的那个。
    - App 隐私：选“不收集数据”，隐私政策网址填 PRIVACY.md 的公开地址。
    - 截图（必填）：6.9 英寸 iPhone（1320×2868）和 13 英寸 iPad（2064×2752），每种 1–10 张。中文版已经截好，在 `store/ios/zh`（iPhone 18 Pro Max 和 iPad Pro 13 英寸模拟器，iOS 27.2）。

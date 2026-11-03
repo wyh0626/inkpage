@@ -6,7 +6,7 @@
     "message": "InkPage"
   },
   "extDesc": {
-    "message": "Calm black-on-white pages for e-ink and paper-like screens: page turns that never cut a line, plus an e-reader-style book view."
+    "message": "Calm black-on-white pages for e-ink screens: page turns that never cut a line, and an e-reader-style book view."
   },
   "cmdToggle": {
     "message": "Toggle e-ink mode on this site"

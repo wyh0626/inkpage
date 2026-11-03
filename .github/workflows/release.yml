@@ -141,18 +141,12 @@ jobs:
           xcode-version: latest-stable
       - name: Version from the tag
         run: npm version --no-git-tag-version --allow-same-version "${{ needs.build.outputs.version }}"
-      - name: Generate the Xcode project (the run number is the build number)
-        run: INKPAGE_BUILD=${{ github.run_number }} node scripts/safari-xcode.mjs
-      - name: Archive the iPhone / iPad app and upload it to App Store Connect
+      - name: Archive the iPhone / iPad app and upload it to App Store Connect (the run number is the build number)
         run: |
           KEY="$RUNNER_TEMP/AuthKey.p8"
           echo "${{ secrets.ASC_KEY_P8_BASE64 }}" | base64 --decode > "$KEY"
-          AUTH=(-allowProvisioningUpdates -authenticationKeyPath "$KEY"
-                -authenticationKeyID "${{ secrets.ASC_KEY_ID }}" -authenticationKeyIssuerID "${{ secrets.ASC_ISSUER_ID }}")
-          xcodebuild archive -project safari-app/InkPage/InkPage.xcodeproj -scheme "InkPage (iOS)" \
-            -destination generic/platform=iOS -archivePath "$RUNNER_TEMP/InkPage.xcarchive" "${AUTH[@]}"
-          xcodebuild -exportArchive -archivePath "$RUNNER_TEMP/InkPage.xcarchive" \
-            -exportOptionsPlist safari/xcode/ExportOptions.plist -exportPath "$RUNNER_TEMP/export" "${AUTH[@]}"
+          INKPAGE_BUILD=${{ github.run_number }} sh scripts/ios-upload.sh -authenticationKeyPath "$KEY" \
+            -authenticationKeyID "${{ secrets.ASC_KEY_ID }}" -authenticationKeyIssuerID "${{ secrets.ASC_ISSUER_ID }}"
 
   release:
     needs: [build, safari]

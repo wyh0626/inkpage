@@ -77,7 +77,7 @@ Safari extensions on iPhone and iPad install only from the App Store, and an iOS
    - iOS 17: Settings → Safari → Extensions → InkPage.
 
    Back in Safari, InkPage is under the page-menu button (aA) in the address bar. For a real device, connect it with a cable and run on it.
-5. **TestFlight (optional)**: Product → Archive, then Distribute App → App Store Connect → Upload, and install it on your own iPhone / iPad through TestFlight.
+5. **Upload**: `npm run ios:upload` archives the app and uploads it to App Store Connect, where it also shows in TestFlight for your own iPhone / iPad. Raise the build number for each upload of the same version: `INKPAGE_BUILD=2 npm run ios:upload`. (Xcode's Product → Archive signs for development first, which fails while the team has no registered devices; the script archives unsigned and signs for the App Store at export.)
 6. **App Store Connect**: create the iOS app in [App Store Connect](https://appstoreconnect.apple.com/) with that bundle ID.
    - App Privacy: "Data Not Collected"; privacy policy URL: the public PRIVACY.md.
    - Screenshots (required): 6.9" iPhone (1320×2868) and 13" iPad (2064×2752), 1–10 each. Chinese sets are ready in `store/ios/zh` (iPhone 18 Pro Max and iPad Pro 13" simulators, iOS 27.2).
