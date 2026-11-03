@@ -57,7 +57,7 @@ class ViewController: PlatformViewController, WKNavigationDelegate, WKScriptMess
         Task {
             let state = try? await SFSafariExtensionManager.stateOfExtension(withIdentifier: extensionBundleIdentifier)
             let enabled = state.map { $0.isEnabled ? "true" : "false" } ?? "null"
-            try? await webView.evaluateJavaScript("show('ios', \(enabled), true)")
+            _ = try? await webView.evaluateJavaScript("show('ios', \(enabled), true)")
         }
 #elseif os(macOS)
         webView.evaluateJavaScript("show('mac', null, true)")

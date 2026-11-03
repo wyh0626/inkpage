@@ -1,6 +1,6 @@
 {
   "name": "inkpage",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "description": "E-ink reading mode for Chrome, Edge, Firefox and Safari",
   "scripts": {
