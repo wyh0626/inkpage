@@ -56,18 +56,28 @@
 
 ## 安装
 
-商店上架方法见 [发布指南](docs/publishing.zh-CN.md)。
+| 浏览器 | 安装地址 |
+|---|---|
+| Chrome | [Chrome 应用商店][chrome] |
+| Edge | [Edge 加载项][edge] |
+| Firefox（电脑和安卓） | [Firefox 附加组件][firefox] |
+| Mac 上的 Safari | [下载 InkPage.dmg][mac] |
+| iPhone / iPad 上的 Safari | [App Store][ios] |
 
-从源码安装：
+### 开启方法
 
-```bash
-npm run build
-```
+- **Chrome、Edge、Firefox**：点工具栏上的墨页图标，选“开”，当前网页就变成白纸黑字；在同一个面板里点“书页”切换到书页模式。Chrome 和 Edge 刚装好时，图标可能收在拼图按钮里，固定到工具栏上更方便。
+- **Mac 上的 Safari**：打开 DMG，把墨页拖进“应用程序”，打开一次。然后在 Safari → 设置 → 扩展 里勾选墨页，并允许它访问网站。之后 Safari 工具栏上就有墨页按钮。
+- **iPhone / iPad 上的 Safari**：从 App Store 安装后，打开“设置” → App → Safari → 扩展 → 墨页（iOS 17 是“设置” → Safari → 扩展），打开它，并把“所有网站”设为“允许”。回到 Safari：iPhone 点地址栏里的页面菜单按钮，iPad 点地址栏里的拼图按钮，再点“墨页”。
 
-- **Chrome / Edge**：打开 `chrome://extensions`，开启“开发者模式”，点“加载已解压的扩展程序”，选择 `dist/chrome`。
-- **Firefox**：打开 `about:debugging#/runtime/this-firefox`，点“临时载入附加组件”，选择 `dist/firefox/manifest.json`。
-- **Safari（macOS）**：运行 `npm run safari:app`，生成已签名的 `dist/InkPage.app`（不需要 Xcode）。打开一次，然后在 Safari → 设置 → 扩展 里勾选墨页。想不签名先试用：Safari → 设置 → 高级 → 勾选“显示网页开发者功能”，再在 设置 → 开发者 → “添加临时扩展…” 里选择 `dist/safari`。
-- **Safari（iPhone / iPad）**：需要安装 Xcode。运行 `npm run safari:xcode`，然后按 [发布指南](docs/publishing.zh-CN.md#safariapp-storeiphone--ipad可同时带上-mac) 操作。
+墨页按网站记住开关：在一个网站打开一次，以后来这个网站都是开着的。
+
+<!-- 商店链接：各商店审核通过后，把下面对应的地址换成商店页面。 -->
+[chrome]: #安装
+[edge]: #安装
+[firefox]: #安装
+[mac]: https://github.com/wyh0626/inkpage/releases/latest
+[ios]: #安装
 
 ## 隐私
 
@@ -81,6 +91,21 @@ npm run build
 - **停动画**：把动画时长压到几乎为 0，而不是用 `animation: none`（那样淡入的内容会一直停在透明状态）。过渡时长设为 0，墨水屏不会多刷一帧中间状态。
 
 ## 开发
+
+### 从源码运行
+
+```bash
+npm run build
+```
+
+- **Chrome / Edge**：打开 `chrome://extensions`，开启“开发者模式”，点“加载已解压的扩展程序”，选择 `dist/chrome`。
+- **Firefox**：打开 `about:debugging#/runtime/this-firefox`，点“临时载入附加组件”，选择 `dist/firefox/manifest.json`。
+- **Safari（macOS）**：运行 `npm run safari:app`，生成已签名的 `dist/InkPage.app`（不需要 Xcode）。打开一次，然后在 Safari → 设置 → 扩展 里勾选墨页。想不签名先试用：Safari → 设置 → 高级 → 勾选“显示网页开发者功能”，再在 设置 → 开发者 → “添加临时扩展…” 里选择 `dist/safari`。
+- **Safari（iPhone / iPad）**：需要完整版 Xcode。`npm run safari:xcode` 会在 `safari-app/InkPage` 生成 Xcode 工程，用 Xcode 在模拟器或真机上运行即可。
+
+发布到各商店、从 GitHub 自动发版：见 [发布指南](docs/publishing.zh-CN.md)。
+
+### 测试
 
 目录结构见 [英文版 README](README.md#development)。测试前先在项目根目录启动服务：`python3 -m http.server 8765`。
 

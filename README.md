@@ -56,18 +56,28 @@ Keys the site handles itself (video players, editors, slide decks) are left to t
 
 ## Install
 
-From the stores: see [docs/publishing.md](docs/publishing.md) for how each listing is made.
+| Browser | Get InkPage |
+|---|---|
+| Chrome | [Chrome Web Store][chrome] |
+| Edge | [Edge Add-ons][edge] |
+| Firefox (desktop and Android) | [Firefox Add-ons][firefox] |
+| Safari on Mac | [Download InkPage.dmg][mac] |
+| Safari on iPhone and iPad | [App Store][ios] |
 
-From source:
+### Turn it on
 
-```bash
-npm run build
-```
+- **Chrome, Edge, Firefox**: click the InkPage icon in the toolbar and choose **On**. The page turns black on white; **Book** in the same panel switches to book view. Chrome and Edge may first put the icon under the puzzle-piece button; pin it to keep it in the toolbar.
+- **Safari on Mac**: open the DMG, drag InkPage to Applications and open it once. Then tick InkPage in Safari → Settings → Extensions and allow it on websites. The InkPage button appears in Safari's toolbar.
+- **Safari on iPhone and iPad**: after installing from the App Store, open Settings → Apps → Safari → Extensions → InkPage (iOS 17: Settings → Safari → Extensions), turn it on and set All Websites to Allow. Back in Safari, tap the page menu button in the address bar on iPhone, or the puzzle-piece button on iPad, then InkPage.
 
-- **Chrome / Edge**: open `chrome://extensions`, turn on Developer mode, choose **Load unpacked** and select `dist/chrome`.
-- **Firefox**: open `about:debugging#/runtime/this-firefox`, choose **Load Temporary Add-on** and select `dist/firefox/manifest.json`.
-- **Safari (macOS)**: `npm run safari:app` builds a signed `dist/InkPage.app` (no Xcode needed). Open it once, then enable InkPage in Safari → Settings → Extensions. For a quick try without signing: Safari → Settings → Advanced → **Show features for web developers**, then Settings → Developer → **Add Temporary Extension…** and select `dist/safari`.
-- **Safari (iPhone / iPad)**: needs Xcode. Run `npm run safari:xcode` and follow [docs/publishing.md](docs/publishing.md#safari-app-store-iphone--ipad-optionally-mac).
+InkPage remembers each site: turn it on once and it stays on there.
+
+<!-- Store links: replace each target with the listing page once that store has approved InkPage. -->
+[chrome]: #install
+[edge]: #install
+[firefox]: #install
+[mac]: https://github.com/wyh0626/inkpage/releases/latest
+[ios]: #install
 
 ## Privacy
 
@@ -81,6 +91,21 @@ No account, no analytics, no network requests of its own. Settings and reading p
 - **Calm**: animation durations drop to almost zero instead of `animation: none`, which would strand fade-in content at opacity 0. Transitions drop to zero, so e-ink never paints an in-between frame.
 
 ## Development
+
+### Run from source
+
+```bash
+npm run build
+```
+
+- **Chrome / Edge**: open `chrome://extensions`, turn on Developer mode, choose **Load unpacked** and select `dist/chrome`.
+- **Firefox**: open `about:debugging#/runtime/this-firefox`, choose **Load Temporary Add-on** and select `dist/firefox/manifest.json`.
+- **Safari (macOS)**: `npm run safari:app` builds a signed `dist/InkPage.app` (no Xcode needed). Open it once, then enable InkPage in Safari → Settings → Extensions. For a quick try without signing: Safari → Settings → Advanced → **Show features for web developers**, then Settings → Developer → **Add Temporary Extension…** and select `dist/safari`.
+- **Safari (iPhone / iPad)**: needs full Xcode. `npm run safari:xcode` writes the Xcode project to `safari-app/InkPage`; run it on a simulator or a device from Xcode.
+
+Publishing to the stores, and releasing from GitHub: [docs/publishing.md](docs/publishing.md).
+
+### Layout
 
 ```text
 src/
@@ -98,7 +123,9 @@ test/                    fixtures, API harness, self test, end-to-end test
 store/                   listing copy and images
 ```
 
-Tests (start a server first: `python3 -m http.server 8765` in the project root):
+### Tests
+
+Start a server first: `python3 -m http.server 8765` in the project root.
 
 | What | How |
 |---|---|
