@@ -6,6 +6,7 @@
 [![Safari 16.4+ on Mac](https://img.shields.io/badge/Safari-16.4%2B%20%C2%B7%20Mac-006CFF?logo=safari&logoColor=white)](#安装)
 [![iPhone and iPad, iOS 17+](https://img.shields.io/badge/iPhone%20%2F%20iPad-iOS%2017%2B-000000?logo=apple&logoColor=white)](#安装)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-555555)](#安装)
+[![MIT license](https://img.shields.io/badge/License-MIT-555555)](LICENSE)
 
 [English](README.md) · 中文
 
@@ -131,3 +132,7 @@ npm run build
 ## 致谢
 
 [Mozilla Readability](https://github.com/mozilla/readability)（Apache-2.0）· [Literata](https://github.com/googlefonts/literata)、[Source Serif 4](https://github.com/adobe-fonts/source-serif)、[Charis SIL](https://software.sil.org/charis/)（SIL Open Font License）。许可证文件在 `src/vendor` 和 `src/fonts` 里。
+
+## 许可证
+
+[MIT](LICENSE) © 2026 Eric Wang。随附的 Readability 和字体沿用各自的许可证，见上一节。

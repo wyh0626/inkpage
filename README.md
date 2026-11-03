@@ -6,6 +6,7 @@
 [![Safari 16.4+ on Mac](https://img.shields.io/badge/Safari-16.4%2B%20%C2%B7%20Mac-006CFF?logo=safari&logoColor=white)](#install)
 [![iPhone and iPad, iOS 17+](https://img.shields.io/badge/iPhone%20%2F%20iPad-iOS%2017%2B-000000?logo=apple&logoColor=white)](#install)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-555555)](#install)
+[![MIT license](https://img.shields.io/badge/License-MIT-555555)](LICENSE)
 
 English · [中文](README.zh-CN.md)
 
@@ -149,3 +150,7 @@ Verified on Chrome 148, Firefox 159 and Safari 26.5. Page turning was also stres
 ## Credits
 
 [Mozilla Readability](https://github.com/mozilla/readability) (Apache-2.0) · [Literata](https://github.com/googlefonts/literata), [Source Serif 4](https://github.com/adobe-fonts/source-serif), [Charis SIL](https://software.sil.org/charis/) (SIL Open Font License). Licence files are in `src/vendor` and `src/fonts`.
+
+## License
+
+[MIT](LICENSE) © 2026 Eric Wang. The bundled Readability and fonts keep their own licences, listed above.
