@@ -1,5 +1,12 @@
 # InkPage — E-ink Reading Mode
 
+[![Chrome 111+](https://img.shields.io/badge/Chrome-111%2B-4285F4?logo=googlechrome&logoColor=white)](#install)
+[![Edge 111+](https://img.shields.io/badge/Edge-111%2B-0078D7?logo=microsoftedge&logoColor=white)](#install)
+[![Firefox 140+](https://img.shields.io/badge/Firefox-140%2B-FF7139?logo=firefoxbrowser&logoColor=white)](#install)
+[![Safari 16.4+ on Mac](https://img.shields.io/badge/Safari-16.4%2B%20%C2%B7%20Mac-006CFF?logo=safari&logoColor=white)](#install)
+[![iPhone and iPad, iOS 17+](https://img.shields.io/badge/iPhone%20%2F%20iPad-iOS%2017%2B-000000?logo=apple&logoColor=white)](#install)
+[![Manifest V3](https://img.shields.io/badge/Manifest-V3-555555)](#install)
+
 English · [中文](README.zh-CN.md)
 
 One click turns any web page into calm black on white for e-ink tablets, paper-like monitors and any screen you want to keep still. Pages turn a screen at a time and never cut a line in half. Book view keeps just the article and typesets it like an e-reader.

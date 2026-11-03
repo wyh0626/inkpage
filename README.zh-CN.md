@@ -1,5 +1,12 @@
 # 墨页 InkPage · 墨水屏阅读模式
 
+[![Chrome 111+](https://img.shields.io/badge/Chrome-111%2B-4285F4?logo=googlechrome&logoColor=white)](#安装)
+[![Edge 111+](https://img.shields.io/badge/Edge-111%2B-0078D7?logo=microsoftedge&logoColor=white)](#安装)
+[![Firefox 140+](https://img.shields.io/badge/Firefox-140%2B-FF7139?logo=firefoxbrowser&logoColor=white)](#安装)
+[![Safari 16.4+ on Mac](https://img.shields.io/badge/Safari-16.4%2B%20%C2%B7%20Mac-006CFF?logo=safari&logoColor=white)](#安装)
+[![iPhone and iPad, iOS 17+](https://img.shields.io/badge/iPhone%20%2F%20iPad-iOS%2017%2B-000000?logo=apple&logoColor=white)](#安装)
+[![Manifest V3](https://img.shields.io/badge/Manifest-V3-555555)](#安装)
+
 [English](README.md) · 中文
 
 一键把任意网页变成安静的白纸黑字，适合墨水屏平板、类纸显示器，以及任何你想让它静下来的屏幕。翻页一次翻一屏，永远不切半行。书页模式只留正文，像电子书一样重新排版。
