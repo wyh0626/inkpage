@@ -6,3 +6,5 @@ safari-app/
 video/
 # Written by every run of test/e2e.mjs.
 test/e2e-*.png
+# ICP filing data for the App Store certificate; kept local.
+store/icp-ios.txt

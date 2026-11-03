@@ -1,0 +1,30 @@
+{
+  "name": "page",
+  "title": "InkPage",
+  "concept": "原图标规整版：一张纸，三行字，右上角折起。所有尺寸都由页宽 Wp 推出：页高 = Wp·√φ，边距 m = Wp/8，行粗 U = Wp/9，行距等于边距，折角 f = Wp/3，短行 = 长行/φ。三行字的整块在折角下沿与页底之间垂直居中。",
+  "colors": {"ink": "#FFFFFF", "paper": "#F3F0E7"},
+  "vars": {
+    "Wp": 48,
+    "Hp": "Wp*sqrt(phi)",
+    "m": "Wp/8",
+    "U": "Wp/9",
+    "f": "Wp/3",
+    "L": "Wp - 2*m",
+    "x0": "50 - Wp/2", "x1": "50 + Wp/2",
+    "y0": "50 - Hp/2", "y1": "50 + Hp/2",
+    "blk": "3*U + 2*m",
+    "t0": "y0 + f + (Hp - f - blk)/2"
+  },
+  "shapes": {
+    "tile":  {"rect": {"x": 0, "y": 0, "w": 100, "h": 100, "r": 0}, "guide": false},
+    "sheet": {"poly": [["x0", "y0"], ["x1 - f", "y0"], ["x1", "y0 + f"], ["x1", "y1"], ["x0", "y1"]]},
+    "fold":  {"poly": [["x1 - f", "y0"], ["x1 - f", "y0 + f"], ["x1", "y0 + f"]], "guide": false},
+    "l1": {"rect": {"x": "x0 + m", "y": "t0",             "w": "L",     "h": "U", "r": 1}, "guide": "lines"},
+    "l2": {"rect": {"x": "x0 + m", "y": "t0 + U + m",     "w": "L",     "h": "U", "r": 1}, "guide": "lines"},
+    "l3": {"rect": {"x": "x0 + m", "y": "t0 + 2*(U + m)", "w": "L/phi", "h": "U", "r": 1}, "guide": "lines"}
+  },
+  "ink": ["sheet", {"cut": "l1"}, {"cut": "l2"}, {"cut": "l3"}],
+  "backdrop": {"shape": "tile", "color": "#111111"},
+  "paint": [{"shape": "fold", "color": "#BEBEBE"}],
+  "guides": [{"axis": true}, {"haxis": 50}, {"hline": "y0 + f"}, {"vline": "x0 + m"}, {"vline": "x1 - m"}, {"vline": "x0 + m + L/phi"}]
+}
