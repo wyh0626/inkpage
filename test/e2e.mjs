@@ -137,6 +137,24 @@ try {
   check('reopens at the remembered page', (await shot()) === pageThree);
   const fontOk = await art.evaluate(() => [...document.fonts].some((f) => f.family === 'InkLiterata' && f.status === 'loaded'));
   check('bundled Literata font loads', fontOk);
+  // Taps in the book stay in the book: the hidden page's own listeners (carousels,
+  // swipe-to-switch scripts) must not see them.
+  await art.evaluate(() => {
+    window.__seen = 0;
+    for (const type of ['pointerdown', 'pointerup', 'mousedown', 'click', 'touchstart']) {
+      document.addEventListener(type, () => { window.__seen++; });
+    }
+  });
+  await art.mouse.click(900, 400); // forward
+  await sleep(150);
+  await art.mouse.click(100, 400); // and back
+  await sleep(150);
+  check('book taps do not reach the page', (await art.evaluate(() => window.__seen)) === 0 && (await shot()) === pageThree);
+  // A page that rewrites its own URL keeps the book up (no flash of the original page).
+  const hostBefore = await art.evaluateHandle(() => document.querySelector('inkpage-book'));
+  await art.evaluate(() => history.replaceState(null, '', `${location.pathname}?ext&ref=1#top`));
+  await sleep(2600);
+  check('URL rewrite keeps the same book open', await art.evaluate((h) => h.isConnected && document.querySelector('inkpage-book') === h, hostBefore));
   // Kindle-style chrome: tap the top for toolbars, then Aa for the settings sheet.
   await art.mouse.click(550, 30);
   await sleep(200);

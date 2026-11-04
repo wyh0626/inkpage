@@ -413,5 +413,26 @@
   },
   "pageNotReached": {
     "message": "页面暂时没有响应。设置照样生效；清屏刷新和隐藏元素需要刷新页面后才能用。"
+  },
+  "optEmptyTouch": {
+    "message": "还没有记录。在 Safari 里点地址栏的页面菜单，选“墨页”即可开始。"
+  },
+  "optHow": {
+    "message": "使用方法"
+  },
+  "optTouchOpen": {
+    "message": "在 Safari 里点地址栏的页面菜单，选“墨页”，为这个网站打开墨水屏模式。"
+  },
+  "optTouchTurn": {
+    "message": "点屏幕右侧翻到下一页，点左侧翻回上一页。"
+  },
+  "optTouchBook": {
+    "message": "在面板里选“书页”，只留正文，像电子书一样排版；左右滑动或点击翻页。"
+  },
+  "optTouchMenu": {
+    "message": "书页里点页面顶部打开工具栏，Aa 可以换字体、排版和纸张配色。"
+  },
+  "optTouchRefresh": {
+    "message": "面板里的“清屏刷新”可以消除墨水屏残影。"
   }
 }

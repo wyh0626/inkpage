@@ -413,5 +413,26 @@
   },
   "pageNotReached": {
     "message": "This page did not answer. Settings still apply; refresh the page to use Refresh screen and Hide elements."
+  },
+  "optEmptyTouch": {
+    "message": "No sites yet. In Safari, open the page menu in the address bar and tap InkPage to start."
+  },
+  "optHow": {
+    "message": "How to use"
+  },
+  "optTouchOpen": {
+    "message": "In Safari, open the page menu in the address bar, tap InkPage and switch e-ink mode on for the site."
+  },
+  "optTouchTurn": {
+    "message": "Tap the right side of the screen for the next page, the left side to go back."
+  },
+  "optTouchBook": {
+    "message": "Choose Book in the panel to keep only the article, laid out like an e-book; swipe or tap to turn pages."
+  },
+  "optTouchMenu": {
+    "message": "In Book, tap the top of the page for the toolbar; Aa changes the font, layout and paper."
+  },
+  "optTouchRefresh": {
+    "message": "Refresh the screen in the panel clears ghosting on e-ink displays."
   }
 }

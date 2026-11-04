@@ -10,11 +10,22 @@
   <h1 data-i18n="optTitle">InkPage — remembered sites</h1>
   <p class="lead" data-i18n="optLead">Every site keeps its own switches. Remove a site to make it follow the defaults again.</p>
 
-  <table>
+  <section class="touch">
+    <h2 data-i18n="optHow">How to use</h2>
+    <ol class="how">
+      <li data-i18n="optTouchOpen">Open the page menu in Safari's address bar, tap InkPage, and switch it on for the site.</li>
+      <li data-i18n="optTouchTurn">Tap the right side of the screen for the next page, the left side to go back.</li>
+      <li data-i18n="optTouchBook">Choose Book in the panel to read the article alone, laid out like an e-book; swipe or tap to turn pages.</li>
+      <li data-i18n="optTouchMenu">In Book, tap the top of the page for the toolbar; Aa changes the font, layout and paper.</li>
+      <li data-i18n="optTouchRefresh">Refresh the screen in the panel clears ghosting on e-ink displays.</li>
+    </ol>
+  </section>
+
+  <table id="table">
     <thead><tr><th data-i18n="optSite">Site</th><th data-i18n="optState">State</th><th data-i18n="optChanges">Own settings</th><th></th></tr></thead>
     <tbody id="rows"></tbody>
   </table>
-  <p class="empty" id="empty" hidden data-i18n="optEmpty">No sites yet. Open the toolbar button on any page to start.</p>
+  <p class="empty" id="empty" hidden><span class="desk" data-i18n="optEmpty">No sites yet. Open the toolbar button on any page to start.</span><span class="touch" data-i18n="optEmptyTouch">No sites yet. In Safari, open the page menu in the address bar and tap InkPage to start.</span></p>
 
   <div class="btns">
     <button type="button" id="export" data-i18n="optExport">Export settings</button>
@@ -23,10 +34,12 @@
     <input type="file" id="file" accept="application/json" hidden>
   </div>
 
+  <section class="desk">
   <h2 data-i18n="optKeys">Keyboard</h2>
   <p><kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd> <span data-i18n="cmdToggle">Toggle e-ink mode on this site</span><br>
      <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> <span data-i18n="cmdRefresh">Refresh the screen (clear e-ink ghosting)</span><br>
      <kbd>Space</kbd> / <kbd>PageDown</kbd> / <kbd>→</kbd> <span data-i18n="optNext">next page</span> · <kbd>Shift</kbd>+<kbd>Space</kbd> / <kbd>PageUp</kbd> / <kbd>←</kbd> <span data-i18n="optPrev">previous page</span></p>
+  </section>
 
   <script src="../shared/settings.js"></script>
   <script src="options.js"></script>

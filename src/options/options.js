@@ -17,6 +17,7 @@ async function render() {
   rows.textContent = '';
   const names = Object.keys(sites).sort();
   $('#empty').hidden = names.length > 0;
+  $('#table').hidden = names.length === 0; // an empty table is just a header
   for (const name of names) {
     const entry = sites[name];
     const tr = document.createElement('tr');

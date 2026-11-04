@@ -773,13 +773,21 @@
 
   /* ------------------------------------------------------------------- API */
 
-  function open(cfg, hooks) {
+  // The hidden page still sees events that bubble out of the book (they reach document and
+  // window retargeted to our host), and carousels or swipe-to-switch-tab scripts listening
+  // there would change the page underneath. The book's own listeners run first, on .book.
+  const SEALED = ['touchstart', 'touchmove', 'touchend', 'touchcancel',
+    'pointerdown', 'pointermove', 'pointerup', 'pointercancel',
+    'mousedown', 'mousemove', 'mouseup', 'click', 'dblclick', 'contextmenu', 'wheel',
+    'gesturestart', 'gesturechange', 'gestureend'];
+  const seal = (e) => e.stopPropagation();
+
+  function open(cfg, hooks, art = extract()) {
     if (s) { update(cfg); return true; }
-    const art = extract();
     if (!art) return false;
     loadFontsFor(cfg);
     const ui = build(art);
-    s = { cfg, hooks, ui, page: 0, pages: 0, step: 1, turns: 0, blocks: [] };
+    s = { cfg, hooks, ui, text: art.text, page: 0, pages: 0, step: 1, turns: 0, blocks: [] };
     ROOT.setAttribute('data-ink-book', '');
     ROOT.appendChild(ui.host);
     ui.css.update(CSS); // now that it's attached: falls back to a constructed sheet if CSP blocked <style>
@@ -802,6 +810,7 @@
     ui.book.addEventListener('pointerup', onPointerUp);
     ui.book.addEventListener('click', onClick);
     ui.book.addEventListener('wheel', onWheel, { passive: false });
+    for (const type of SEALED) ui.book.addEventListener(type, seal, { passive: true });
     ui.flow.addEventListener('load', soon, true); // images arriving change the page count
     ui.flow.addEventListener('error', soon, true);
     if (DOC.fonts && DOC.fonts.ready) DOC.fonts.ready.then(() => s && soon());
@@ -829,10 +838,24 @@
     s = null;
   }
 
+  // The address changed under an open book (a single-page app, or a page that rewrites its
+  // own URL). Swap the article in place, within one task, so the original page never shows;
+  // keep the book as it is when the text is the same. Returns false once there's no article.
+  function reload() {
+    if (!s) return false;
+    const art = extract();
+    if (!art) { close(); return false; }
+    if (art.text === s.text) return true;
+    const { cfg, hooks } = s;
+    close();
+    return open(cfg, hooks, art);
+  }
+
   globalThis.InkBook = {
     open,
     update,
     close,
+    reload,
     isOpen: () => !!s,
     turn: (d) => s && turn(d),
     state: () => (s ? { page: s.page, pages: s.pages, step: s.step } : null), // for tests

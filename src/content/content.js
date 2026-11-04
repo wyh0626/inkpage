@@ -1044,7 +1044,8 @@
   let bookDismissed = false; // Esc: show the original page until the next visit
   let bookFailed = '';       // URL where Readability found no article
   let bookBusy = false;
-  let bookHref = location.href;
+  const pageUrl = () => location.origin + location.pathname + location.search; // a #hash is the same article
+  let bookHref = pageUrl();
   let bookWatch = 0;
 
   const bookHooks = {
@@ -1093,16 +1094,21 @@
     }
   }
 
-  // Single-page apps change articles without reloading.
+  // Single-page apps change articles without reloading; some pages also rewrite their own
+  // URL as they go. The book stays up while the new content arrives and is swapped in place.
   function watchUrl() {
     if (bookWatch) return;
     bookWatch = setInterval(() => {
-      if (location.href === bookHref) return;
-      bookHref = location.href;
-      if (globalThis.InkBook && globalThis.InkBook.isOpen()) {
-        globalThis.InkBook.close();
-        setTimeout(syncBook, 1000);
-      }
+      const href = pageUrl();
+      if (href === bookHref) return;
+      bookHref = href;
+      if (!bookOpen()) { setTimeout(syncBook, 1000); return; } // a new page may have an article
+      setTimeout(() => {
+        if (!bookOpen() || globalThis.InkBook.reload()) return;
+        bookFailed = location.href;
+        updateBadge();
+        toast(t('bookNoArticle', 'No article found here — showing the web page instead.'));
+      }, 1000);
     }, 1000);
   }
 

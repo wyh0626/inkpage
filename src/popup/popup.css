@@ -155,3 +155,20 @@ footer { margin-top: 12px; padding-top: 10px; border-top: 2px solid var(--line);
 .page .empty { color: var(--dim); padding: 16px 0; }
 .page kbd { border: 1px solid var(--line); padding: 1px 5px; font: 12px ui-monospace, Menlo, monospace; }
 .page code { font: 12px ui-monospace, Menlo, monospace; }
+
+/* options page on phones and tablets: a touch guide instead of shortcuts, rows as cards */
+.page .touch { display: none; }
+.page .how { margin: 6px 0 24px; padding-left: 1.4em; line-height: 1.6; }
+.page .how li { margin: 0 0 8px; padding-left: 2px; }
+@media (hover: none) and (pointer: coarse) {
+  .page .touch { display: revert; }
+  .page .desk { display: none; }
+  .page .btns button { padding: 10px 14px; }
+}
+@media (max-width: 560px) {
+  .page thead { display: none; }
+  .page tr { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; padding: 10px 0; border-bottom: 1px solid var(--soft); }
+  .page td { border: 0; padding: 0; }
+  .page td:first-child { flex-basis: 100%; font-weight: 600; overflow-wrap: anywhere; }
+  .page td:last-child { margin-left: auto; }
+}
