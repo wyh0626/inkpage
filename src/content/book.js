@@ -529,7 +529,20 @@
     book.style.setProperty('--indent', cjk ? '2em' : indentMode ? '1.5em' : '0');
     book.style.setProperty('--indent-after', cjk ? '2em' : '0');
     book.style.setProperty('--pgap', indentMode ? (cjk ? '.2em' : '0') : '.85em');
+    if (s.theme && s.theme !== c.theme) retint();
+    s.theme = c.theme;
     syncSheet();
+  }
+
+  // iOS Safari tints its toolbars from a full-screen fixed layer when the layer appears and
+  // ignores later colour changes. Hiding the book for a moment (the paper behind it already has
+  // the new colour) makes it sample again; two frames are too short after a relayout.
+  const TOUCH_SAFARI = !!(globalThis.CSS && globalThis.CSS.supports('-webkit-touch-callout', 'none'));
+  function retint() {
+    if (!TOUCH_SAFARI) return;
+    const { host } = s.ui;
+    host.style.visibility = 'hidden';
+    requestAnimationFrame(() => setTimeout(() => { host.style.visibility = ''; }, 80));
   }
 
   function flowLeft() {
