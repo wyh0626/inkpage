@@ -8,3 +8,5 @@ video/
 test/e2e-*.png
 # ICP filing data for the App Store certificate; kept local.
 store/icp-ios.txt
+# App Review screen recordings show a real device; kept local.
+store/ios/review-demo.*
