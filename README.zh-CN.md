@@ -73,12 +73,12 @@
 
 墨页按网站记住开关：在一个网站打开一次，以后来这个网站都是开着的。
 
-<!-- 商店链接：各商店审核通过后，把下面对应的地址换成商店页面。 -->
-[chrome]: #安装
+<!-- 商店链接：Edge 加载项审核通过后，把 edge 换成商店页面。 -->
+[chrome]: https://chromewebstore.google.com/detail/mfokhnbicfnfogkncnajofioiojmbhbg
 [edge]: #安装
-[firefox]: #安装
+[firefox]: https://addons.mozilla.org/firefox/addon/inkpage-e-ink-reading-mode/
 [mac]: https://github.com/wyh0626/inkpage/releases/latest
-[ios]: #安装
+[ios]: https://apps.apple.com/app/id6830053910
 
 ## 隐私
 

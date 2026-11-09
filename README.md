@@ -73,12 +73,12 @@ Keys the site handles itself (video players, editors, slide decks) are left to t
 
 InkPage remembers each site: turn it on once and it stays on there.
 
-<!-- Store links: replace each target with the listing page once that store has approved InkPage. -->
-[chrome]: #install
+<!-- Store links: replace Edge once Edge Add-ons has approved InkPage. -->
+[chrome]: https://chromewebstore.google.com/detail/mfokhnbicfnfogkncnajofioiojmbhbg
 [edge]: #install
-[firefox]: #install
+[firefox]: https://addons.mozilla.org/firefox/addon/inkpage-e-ink-reading-mode/
 [mac]: https://github.com/wyh0626/inkpage/releases/latest
-[ios]: #install
+[ios]: https://apps.apple.com/app/id6830053910
 
 ## Privacy
 
